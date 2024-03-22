@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
 
   return (
-    <div className='cantainer'>
+    <div className='container-app'>
       <ServicePane />
       <Canvas>
         <Text text="Some text on canvas" fontSize={15} />

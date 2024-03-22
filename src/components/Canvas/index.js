@@ -1,6 +1,6 @@
 import { Stage, Layer, Line } from 'react-konva';
 const HEIGHT = window.innerHeight;
-const WIDTH = window.innerWidth - 200;
+const WIDTH = window.innerWidth - 320;
 
 const Canvas = () => {
   const grid = [];
@@ -28,11 +28,13 @@ const Canvas = () => {
 
 
   return (
-    <Stage height={HEIGHT} width={WIDTH}>
+    <div style={{ display: 'flex' }}>
+      <Stage height={HEIGHT} width={WIDTH}>
       <Layer>
         {grid}
       </Layer>
     </Stage>
+    </div>
   )
 }
 
