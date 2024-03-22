@@ -20,3 +20,8 @@
 .section h2 {
   margin-bottom: 16px;
 }
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+}

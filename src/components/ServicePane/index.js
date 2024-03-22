@@ -1,6 +1,8 @@
 import React from "react";
 import './style.css';
 import VPC from '../AWS_Services/VPC'
+import manifest from '../../manifest';
+import IconFactory from "../IconFactory";
 
 const ServicePane = () => {
 
@@ -10,14 +12,18 @@ const ServicePane = () => {
 
   return (
     <div className="container-service_pane">
-      <h1>AWS Services</h1>
+      <h1>{manifest.title}</h1>
 
-      <div className="section">
-        <h2>Containers</h2>
-        <div>
-          <VPC onClick={handleOnClick} />
+      {manifest.sections.map((section => (
+        <div className="section">
+          <h2>{section.title}</h2>
+          <div className="services">
+            {section.services.map((service) => (
+              <IconFactory name={service.name} />
+            ))}
         </div>
       </div>
+      )))}
 
     </div>
   )
