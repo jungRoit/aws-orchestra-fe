@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Stage, Layer, Line } from 'react-konva';
 import ServicePane from './components/ServicePane';
 import './App.css';
-import VPCNode from './components/Canvas/VPCNode';
+import VPCNode from './components/AWS_Services/VPC';
 import NodeFactory from './components/NodeFactory';
 import { generateRandomString } from './utils/utils';
 

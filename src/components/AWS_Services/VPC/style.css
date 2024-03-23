@@ -1,0 +1,16 @@
+.vpc-icon-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.vpc-icon-text {
+  font-size: 12px;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.vpc-icon-configure {
+  align-self: flex-start;
+  margin-left: -6px;
+}

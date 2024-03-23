@@ -1,10 +1,10 @@
-import VPCNode from "../Canvas/VPCNode";
+import VPC from "../AWS_Services/VPC";
 
 const NodeFactory = ({ node, onDragEnd }) => {
 
   switch (node.name) {
     case 'VPC': {
-      return <VPCNode node={node} onDragEnd={onDragEnd} />
+      return <VPC node={node} onDragEnd={onDragEnd} />
     }
 
     default: return null;
