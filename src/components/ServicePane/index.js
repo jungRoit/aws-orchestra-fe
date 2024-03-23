@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css';
 import manifest from '../../manifest';
-import Icon from "../Icon";
+import ServiceIcon from "../ServiceIcon";
 
 const ServicePane = ({ onClick }) => {
 
@@ -13,7 +13,7 @@ const ServicePane = ({ onClick }) => {
           <h2>{section.title}</h2>
           <div className="services">
             {section.services.map((service) => (
-              <Icon
+              <ServiceIcon
                 name={service.name}
                 displayName={service.displayName}
                 onClick={onClick}

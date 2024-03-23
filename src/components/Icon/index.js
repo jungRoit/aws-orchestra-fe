@@ -14,83 +14,73 @@ import APIGW from 'react-aws-icons/dist/aws/logo/APIGateway';
 import ELB from 'react-aws-icons/dist/aws/logo/ELB';
 import NATGateway from 'react-aws-icons/dist/aws/compute/NATGateway';
 
+const Icon = ({ name }) => {
 
-const Icon = ({ name, displayName, onClick }) => {
-  let Icon = null;
   switch (name) {
     case 'VPC': {
-      Icon = <VPC size={48} />
+      return <VPC size={48} />
       break;
     }
     case 'EC2': {
-      Icon = <EC2 size={48} />
+      return <EC2 size={48} />
       break;
     }
     case 'ECS': {
-      Icon = <ECS size={48} />
+      return <ECS size={48} />
       break;
     }
     case 'Route53': {
-      Icon = <Route53 size={48} />
+      return <Route53 size={48} />
       break;
     }
     case 'APIGW': {
-      Icon = <APIGW size={48} />
+      return <APIGW size={48} />
       break;
     }
     case 'ELB': {
-      Icon = <ELB size={48} />
+      return <ELB size={48} />
       break;
     }
     case 'NATGateway': {
-      Icon = <NATGateway size={48} />
+      return <NATGateway size={48} />
       break;
     }
     case 'Lambda': {
-      Icon = <Lambda size={48} />
+      return <Lambda size={48} />
       break;
     }
     case 'StepFunctions': {
-      Icon = <StepFunctions size={48} />
+      return <StepFunctions size={48} />
       break;
     }
     case 'S3': {
-      Icon = <S3 size={48} />
+      return <S3 size={48} />
       break;
     }
     case 'RDS': {
-      Icon = <RDS size={48} />
+      return <RDS size={48} />
       break;
     }
     case 'ElastiCache': {
-      Icon = <ElastiCache size={48} />
+      return <ElastiCache size={48} />
       break;
     }
     case 'DynamoDB': {
-      Icon = <DynamoDB size={48} />
+      return <DynamoDB size={48} />
       break;
     }
     case 'PublicSubnet': {
-      Icon = <PublicSubnet size={48} />
+      return <PublicSubnet size={48} />
       break;
     }
     case 'PrivateSubnet': {
-      Icon = <PrivateSubnet size={48} />
+      return <PrivateSubnet size={48} />
       break;
     }
     default: {
-      Icon = <div>No Icon</div>
+      return <div>No Icon</div>
     }
   }
-
-  return (
-    <div onClick={(e) => onClick(e, name)} className='icon'>
-      {Icon}
-      <div className='icon-text'>
-        {displayName}
-      </div>
-    </div>
-  )
 }
 
 export default Icon;

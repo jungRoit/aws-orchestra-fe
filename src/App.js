@@ -45,16 +45,17 @@ const App = () => {
         height: 640
       }
       default: return {
-        width: 200,
-        height: 200
+        width: 88,
+        height: 88
       }
     }
   }
 
-  const handleServiceClick = (e, name) => {
+  const handleServiceClick = (e, name, displayName) => {
     const node = {
       id: generateRandomString(8),
       name: name,
+      displayName: displayName,
       position: {
         x: 200,
         y: 300

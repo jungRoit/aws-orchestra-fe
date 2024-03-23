@@ -1,5 +1,6 @@
 import VPC from "../AWS_Services/VPC";
 import PublicSubnet from "../AWS_Services/PublicSubnet";
+import AWSService from "../AWS_Services/GenericService";
 
 const NodeFactory = ({ node, onDragEnd }) => {
 
@@ -11,7 +12,7 @@ const NodeFactory = ({ node, onDragEnd }) => {
       return <PublicSubnet node={node} onDragEnd={onDragEnd} />
     }
 
-    default: return null;
+    default: return <AWSService node={node} onDragEnd={onDragEnd} />
   }
 
 }
