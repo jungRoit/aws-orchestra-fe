@@ -3,7 +3,7 @@ import PublicSubnet from 'react-aws-icons/dist/aws/compute/VPCSubnet';
 import VPC from 'react-aws-icons/dist/aws/compute/VPC';
 import EC2 from 'react-aws-icons/dist/aws/logo/EC2';
 import ECS from 'react-aws-icons/dist/aws/logo/ECS';
-import Lambda from 'react-aws-icons/dist/aws/logo/Lambda';
+import Lambda from 'react-aws-icons/dist/aws/iot/LambdaFunction';
 import StepFunctions from 'react-aws-icons/dist/aws/logo/StepFunctions';
 import S3 from 'react-aws-icons/dist/aws/logo/S3';
 import RDS from 'react-aws-icons/dist/aws/logo/RDS';

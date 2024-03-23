@@ -17,6 +17,8 @@ const VPC = ({ node, onDragEnd }) => {
     }
 
   }, [enableResize])
+
+  console.log('Enable RES', enableResize, transformerRef);
   return (
     <>
       <Group
@@ -24,8 +26,12 @@ const VPC = ({ node, onDragEnd }) => {
         draggable={true}
         onTransformEnd={(e) => {
           console.log('Transformed', e)
+          setEnableResize(false);
         }}
-        onDragEnd={onDragEnd}
+        onDragEnd={(e) => {
+          setEnableResize(false);
+          onDragEnd(e);
+        }}
         onClick={() => {
           setEnableResize(true);
         }}

@@ -62,7 +62,7 @@ const manifest = {
         {
           name: 'DynamoDB',
           type: 'service',
-          displayName: 'Dynamo DB'
+          displayName: 'DynamoDB'
         },
         {
           name: 'ElastiCache',
@@ -77,7 +77,7 @@ const manifest = {
         {
           name: 'Route53',
           type: 'service',
-          displayName: 'Route 53'
+          displayName: 'Route53'
         },
         {
           name: 'APIGW',
