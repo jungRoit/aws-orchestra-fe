@@ -4,6 +4,7 @@ import ServicePane from './components/ServicePane';
 import './App.css';
 import VPCNode from './components/Canvas/VPCNode';
 import NodeFactory from './components/NodeFactory';
+import { generateRandomString } from './utils/utils';
 
 const HEIGHT = window.innerHeight;
 const WIDTH = window.innerWidth - 320;
@@ -34,10 +35,25 @@ const App = () => {
   }
 
   const handleServiceClick = (e, name) => {
-    // nodes.push({ name: name });
-    setNodes([{ name: name }]);
+    const node = {
+      id: generateRandomString(8),
+      name: name,
+      position: {
+        x: 200,
+        y: 300
+      },
+      size: {
+        width: 960,
+        height: 800
+      }
+    }
+    setNodes([...nodes, node]);
   }
-  console.log('NODES', nodes);
+
+  const handleNodeDragEnd = (node, e) => {
+    console.log('Handle Drag End', node, e);
+  }
+
   return (
     <div className='container-app'>
       <ServicePane onClick={handleServiceClick} />
@@ -45,7 +61,9 @@ const App = () => {
         <Layer>
           {grid}
           {nodes.map(node => (
-            <NodeFactory name={node.name} />
+            <NodeFactory node={node} onDragEnd={(e) => {
+              handleNodeDragEnd(node, e)
+            }} />
           ))}
         </Layer>
       </Stage>

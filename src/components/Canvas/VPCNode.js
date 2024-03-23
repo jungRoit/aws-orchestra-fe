@@ -3,24 +3,25 @@ import { Html } from 'react-konva-utils'
 import VPC from 'react-aws-icons/dist/aws/compute/VPC';
 
 
-const VPCNode = () => {
+const VPCNode = ({ node, onDragEnd }) => {
   return (
     <Group
       draggable={true}
+      onDragEnd={onDragEnd}
       onClick={() => {
         alert('Clicked');
       }}
     >
       <Rect
-        x={200}
-        y={300}
-        width={960}
-        height={800}
+        x={node.position.x}
+        y={node.position.y}
+        width={node.size.width}
+        height={node.size.height}
         stroke={'#F58535'}
         strokeWidth={0.8}
         shadowBlur={10}
       />
-      <Group x={216} y={316}>
+      <Group x={node.position.x + 16} y={node.position.y + 16}>
         <Html>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <VPC size={48} />

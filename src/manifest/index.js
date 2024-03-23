@@ -6,15 +6,18 @@ const manifest = {
       services: [
         {
           name: 'VPC',
-          type: 'container'
+          type: 'container',
+          displayName: 'VPC'
         },
         {
           name: 'PublicSubnet',
-          type: 'container'
+          type: 'container',
+          displayName: 'Public Subnet'
         },
         {
           name: 'PrivateSubnet',
-          type: 'container'
+          type: 'container',
+          displayName: 'Private Subnet'
         }
       ]
     }

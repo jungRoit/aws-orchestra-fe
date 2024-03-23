@@ -1,10 +1,10 @@
 import VPCNode from "../Canvas/VPCNode";
 
-const NodeFactory = ({ name }) => {
+const NodeFactory = ({ node, onDragEnd }) => {
 
-  switch (name) {
+  switch (node.name) {
     case 'VPC': {
-      return <VPCNode />
+      return <VPCNode node={node} onDragEnd={onDragEnd} />
     }
 
     default: return null;
