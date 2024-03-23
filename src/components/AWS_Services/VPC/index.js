@@ -22,6 +22,9 @@ const VPC = ({ node, onDragEnd }) => {
       <Group
         ref={shapeRef}
         draggable={true}
+        onTransformEnd={(e) => {
+          console.log('Transformed', e)
+        }}
         onDragEnd={onDragEnd}
         onClick={() => {
           setEnableResize(true);

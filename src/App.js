@@ -61,9 +61,12 @@ const App = () => {
         <Layer>
           {grid}
           {nodes.map(node => (
-            <NodeFactory node={node} onDragEnd={(e) => {
+            <NodeFactory
+              node={node}
+              onDragEnd={(e) => {
               handleNodeDragEnd(node, e)
-            }} />
+              }}
+            />
           ))}
         </Layer>
       </Stage>
