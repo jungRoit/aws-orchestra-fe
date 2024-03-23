@@ -34,6 +34,23 @@ const App = () => {
     )
   }
 
+  const getServiceNodeSie = (name) => {
+    switch (name) {
+      case 'VPC': return {
+        width: 960,
+        height: 800
+      }
+      case 'PublicSubnet': return {
+        width: 400,
+        height: 640
+      }
+      default: return {
+        width: 200,
+        height: 200
+      }
+    }
+  }
+
   const handleServiceClick = (e, name) => {
     const node = {
       id: generateRandomString(8),
@@ -42,10 +59,7 @@ const App = () => {
         x: 200,
         y: 300
       },
-      size: {
-        width: 960,
-        height: 800
-      }
+      size: getServiceNodeSie(name)
     }
     setNodes([...nodes, node]);
   }

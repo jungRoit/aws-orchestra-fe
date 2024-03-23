@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Rect, Group, Transformer } from 'react-konva';
 import { Html } from 'react-konva-utils'
-import Icon from 'react-aws-icons/dist/aws/compute/VPC';
+import Icon from 'react-aws-icons/dist/aws/compute/VPCSubnet';
 
 import './style.css';
 
-const VPC = ({ node, onDragEnd }) => {
+const PublicSubnet = ({ node, onDragEnd }) => {
   const [enableResize, setEnableResize] = useState(false);
   const shapeRef = useRef();
   const transformerRef = useRef();
@@ -40,20 +40,20 @@ const VPC = ({ node, onDragEnd }) => {
           y={node.position.y}
           width={node.size.width}
           height={node.size.height}
-          stroke={'#F58535'}
+          stroke={'#238813'}
           strokeWidth={0.8}
           shadowBlur={10}
         />
-        <Group x={node.position.x + 16} y={node.position.y + 16}>
+        <Group x={node.position.x - 100 + (node.size.width / 2)} y={node.position.y + 16}>
           <Html>
             <div
-              className='vpc-icon-container'
+              className='pub-subnet-icon-container'
               onClick={() => {
                 alert('Clicked');
               }}>
-              <Icon size={48} />
-              <div className='vpc-icon-text'>
-                Virtual Private Cloud
+              <Icon size={36} />
+              <div className='pub-subnet-icon-text'>
+                Public Subnet
               </div>
             </div>
           </Html>
@@ -76,4 +76,4 @@ const VPC = ({ node, onDragEnd }) => {
   )
 }
 
-export default VPC;
+export default PublicSubnet;
