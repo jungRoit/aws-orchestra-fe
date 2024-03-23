@@ -1,4 +1,4 @@
-import VPCIcon from 'react-aws-icons/dist/aws/logo/VPC';
+import VPCIcon from 'react-aws-icons/dist/aws/compute/VPC';
 
 const VPC = ({ onClick }) => {
   return (

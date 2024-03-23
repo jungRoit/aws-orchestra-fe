@@ -1,36 +1,54 @@
-import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
-import Canvas from './components/Canvas';
+import React, { useState } from 'react';
+import { Stage, Layer, Line } from 'react-konva';
 import ServicePane from './components/ServicePane';
 import './App.css';
+import VPCNode from './components/Canvas/VPCNode';
+import NodeFactory from './components/NodeFactory';
+
+const HEIGHT = window.innerHeight;
+const WIDTH = window.innerWidth - 320;
 
 const App = () => {
+  const [nodes, setNodes] = useState([]);
+  const grid = [];
+  const gridSize = 30;
 
+  for (let i = 0; i < WIDTH / gridSize; i++) {
+    grid.push(
+      <Line
+        key={`line-h-${i}`}
+        points={[i * gridSize, 0, i * gridSize, WIDTH]}
+        stroke={'#ccc'}
+        strokeWidth={0.5}
+      />
+    )
+
+    grid.push(
+      <Line
+        key={`line-w-${i}`}
+        points={[0, i * gridSize, WIDTH, i * gridSize]}
+        stroke={'#ccc'}
+        strokeWidth={0.5}
+      />
+    )
+  }
+
+  const handleServiceClick = (e, name) => {
+    // nodes.push({ name: name });
+    setNodes([{ name: name }]);
+  }
+  console.log('NODES', nodes);
   return (
     <div className='container-app'>
-      <ServicePane />
-      <Canvas>
-        <Text text="Some text on canvas" fontSize={15} />
-        <Rect
-          x={20}
-          y={50}
-          width={100}
-          height={100}
-          fill="red"
-          shadowBlur={10}
-        />
-        <Circle x={200} y={100} radius={50} fill="green" />
-        <Line
-          x={20}
-          y={200}
-          points={[0, 0, 100, 0, 100, 100]}
-          tension={0.5}
-          closed
-          stroke="black"
-          fillLinearGradientStartPoint={{ x: -50, y: -50 }}
-          fillLinearGradientEndPoint={{ x: 50, y: 50 }}
-          fillLinearGradientColorStops={[0, 'red', 1, 'yellow']}
-        />
-      </Canvas>
+      <ServicePane onClick={handleServiceClick} />
+      <Stage height={HEIGHT} width={WIDTH}>
+        <Layer>
+          {grid}
+          {nodes.map(node => (
+            <NodeFactory name={node.name} />
+          ))}
+        </Layer>
+      </Stage>
     </div>
   );
 }

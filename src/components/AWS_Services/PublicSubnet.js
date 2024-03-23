@@ -1,4 +1,4 @@
-import Icon from 'react-aws-icons/dist/aws/compute/VPN';
+import Icon from 'react-aws-icons/dist/aws/compute/VPCSubnet';
 
 const PublicSubnet = ({ onClick }) => {
   return (
