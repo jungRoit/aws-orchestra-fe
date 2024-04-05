@@ -44,6 +44,10 @@ const App = () => {
         width: 400,
         height: 640
       }
+      case 'PrivateSubnet': return {
+        width: 400,
+        height: 640
+      }
       default: return {
         width: 88,
         height: 88
